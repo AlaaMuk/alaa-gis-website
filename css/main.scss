@@ -46,37 +46,82 @@ nav {
 
 ///END NAVIGATION
 
-$parallax-window-height: 30em;
-$parallax-background-height: $parallax-window-height * 2;
+.text-wrap {
+   background-color: rgba(0,0,0,.8);
+   padding-top: 45px;
+   padding-bottom:1px;
 
-.parallax-window {
-  max-height: $parallax-window-height;
-  overflow: hidden;
-  position: relative;
+
+}
+ #intro-title {
+        color: #ff4d00;
+
+      }
+
+.hero-copy {
+  margin-top: 5%;
   text-align: center;
-  width: 100%;
+
+
+
 
 }
 
-.parallax-static-content {
-  color: grey;
-  padding: 8em 0;
-  position: relative;
-  z-index: 9;
-}
+.hero {
+  $base-border-radius: 3px !default;
+  $action-color: #477DCA !default;
+  $large-screen: em(860) !default;
+  $hero-background-top: #7F99BE;
+  $hero-background-bottom: #20392B;
+  $hero-color: white;
+  $gradient-angle: 10deg;
+  height:60vh;
 
-.parallax-background {
-  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png") repeat;
+  @include background(url('chicago_cg.jpg'));
+  background-color:black;
   background-position: top;
+  background-repeat: no-repeat;
   background-size: cover;
-  background-color: beige;
-  height: $parallax-background-height;
-  left: 0;
-  position: absolute;
-  top: - $parallax-window-height / 3;
-  width: 100%;
-}
+  padding-bottom: 3em;
 
+  .hero-logo img {
+    height: 100%;
+    margin-bottom: 1em;
+    opacity:0.5;
+  }
+
+  .hero-inner {
+    @include outer-container;
+    @include clearfix;
+    margin: auto;
+    padding: 3.5em;
+    text-align: center;
+
+
+
+
+
+      h1 {
+        color: $hero-color;
+        font-size: 2.6em;
+        margin-bottom: 0.5em;
+        font-family: 'Sanchez', serif;
+
+      }
+
+      p {
+        color: $hero-color;
+        line-height: 1em;
+        margin: 0 auto 3em auto;
+
+        @include media($large-screen) {
+          font-size: 1.1em;
+          max-width: 40%;
+        }
+      }
+
+  }
+}
 
 
 //////
@@ -221,4 +266,8 @@ article.type-system-geometric {
   }
 }
 
-
+/////
+img.redlining {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
